@@ -4,6 +4,9 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
+# shellcheck disable=SC1091
+source "${ROOT_DIR}/scripts/launchd-common.sh"
+
 ACTION="${1:-start}"
 SUPERVISOR_PID=""
 SERVER_LOG=""
